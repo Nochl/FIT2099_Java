@@ -1,13 +1,13 @@
-public class buyer {
+public class Buyer {
     private int buyerid;
     private String givenName;
     private String familyName;
 
-    public buyer(int newBuyerId) {
+    public Buyer(int newBuyerId) {
         this.buyerid = newBuyerId;
     }
 
-    public buyer(int newBuyerId, String newGivenName, String newFamilyName) {
+    public Buyer(int newBuyerId, String newGivenName, String newFamilyName) {
         this.buyerid = newBuyerId;
         this.givenName = newGivenName;
         this.familyName = newFamilyName;
