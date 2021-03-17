@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class AutoShowroom {
-    Car[] carArray= new Car[3];
+    ArrayList<Car> carList = new ArrayList<Car>();
 
     public void printStatus() {
         System.out.println("Welcome to FIT2099 Showroom");
@@ -10,18 +12,18 @@ public class AutoShowroom {
 
     public void createCars() {
         for (int i = 0; i < 3; i++) {
-            carArray[i] = new Car();
+            carList.add(new Car());
         }
-        carArray[0].setMakeModel("BMW", "X7");
-        carArray[1].setMakeModel("Audi", "A8");
-        carArray[2].setMakeModel("Mercedes", "GLS");
+        carList.get(0).setMakeModel("BMW", "X7");
+        carList.get(1).setMakeModel("Audi", "A8");
+        carList.get(2).setMakeModel("Mercedes", "GLS");
     }
 
     public void displayCars() {
-        for (int i = 0; i < carArray.length; i++) {
-            System.out.println("Car ("+(i+1)+") "+carArray[i].getCarDescription());
-
+        for (int i = 0; i < carList.size(); i++) {
+            System.out.println("Car ("+(i+1)+") "+carList.get(i).getCarDescription());
         }
+
     }
 }
 
