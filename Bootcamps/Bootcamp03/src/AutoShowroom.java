@@ -21,7 +21,7 @@ public class AutoShowroom {
 
     public void displayCars() {
         for (int i = 0; i < carList.size(); i++) {
-            System.out.println("Car ("+(i+1)+") "+carList.get(i).getCarDescription());
+            System.out.println("Car ("+(i+1)+") "+carList.get(i).description());
         }
 
     }
