@@ -12,13 +12,14 @@ public class Car {
         this.model = model;
     }
 
-    public addBid(Buyer newBuyer, int price, String date) {
-        newbuyer.
+    public void addBid(Buyer newBuyer, int price, String date) {
+        bids.add(new Bid((bids.size()+1), newBuyer, price, date));
     }
 
 
     public String description() {
-        return "Maker:"+make+" and "+model;
+        return "Maker: "+make+" and "+model;
     }
+
 
 }
