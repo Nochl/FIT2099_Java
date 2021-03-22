@@ -1,3 +1,21 @@
-Advantages & Disadvantages of using Int vs java string
+Advantages & Disadvantages of using Int vs java string for BuyerID
+    Advantages of Integers
+    - Integers are simpler than strings
+    - Uses less space compared to Strings
+    - Faster to compare Integers
 
-Given Name vs Family Name
+
+    Disadvantages
+    - There are possible combinations of integers, as there are only 10 unique single digit integers
+    - Can have shorter alphanumeric ID's that have the same total number of possible combinations compared to an int ID
+
+    My Choice
+    - I chose to use integers as the ID because
+        *We won't have many buyer entries so combinations are not of concern
+        *It's simpler to use
+        *ID's will be Quick to validate/compare against each other
+
+Given & Family Name vs First & Last Name
+    - Using First & Last name would pass over those which have given names of more than 1 word
+        eg. Anthony John Smith would only appear as Anthony Smith
+    - Family name is the name which is shared with their family but is not necessarily the Last name
