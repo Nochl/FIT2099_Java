@@ -1,0 +1,17 @@
+Task 7 - Buyer List Display Pseudocode
+
+*inside of the AutoShowroom Class create method to fetch buyers
+
+fetchBuyer() {
+    ArrayList<Buyer> buyerArray = new ArrayList<Buyer>;
+
+    For each car stored in AutoShowroom:
+        For each bid stored in the car:
+            - Check bids buyer, and its ID
+            if (the ID does not match an ID of an existing buyer in the array):
+                - Add buyer to buyerArray
+
+    For each buyer in buyerArray:
+        print the buyers' ID and Name using description() method from Buyer class
+
+}
