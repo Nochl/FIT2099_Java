@@ -56,25 +56,5 @@ public class AutoShowroom {
 
         }
     }
-
-    /*
-    public int createBidBuyer() {
-        Scanner gui = new Scanner(System.in);
-        System.out.println("Please Enter The Following Details");
-        System.out.println("Given Name: ");
-        String gName = gui.next();
-        System.out.println("Family Name: ");
-        String fName = gui.next();
-        System.out.println("Buyer ID: ");
-        String buyId = gui.next();
-        System.out.println("Bid Price: ");
-        String bidPrice = gui.next();
-        System.out.println("Date: ");
-        String date = gui.next();
-
-
-    }
-
-     */
 }
 
