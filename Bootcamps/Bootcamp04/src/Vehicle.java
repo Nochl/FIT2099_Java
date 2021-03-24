@@ -3,7 +3,7 @@ import java.util.Random;
 
 abstract public class Vehicle {
 
-    ArrayList<Bid> bids = new ArrayList<Bid>();
+    private BidsManager bids = new BidsManager();
 
     private String maker = null;
     private String model = null;
