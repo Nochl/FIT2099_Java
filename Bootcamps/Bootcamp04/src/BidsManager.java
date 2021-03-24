@@ -11,5 +11,6 @@ public class BidsManager {
     public void addBid(int buyerId, int bidPrice, String bidDate) {
         bidManager.put(buyerId, new Bid((numBids+1), new Buyer(buyerId), bidPrice, bidDate);
         numBids++;
+
     }
 }

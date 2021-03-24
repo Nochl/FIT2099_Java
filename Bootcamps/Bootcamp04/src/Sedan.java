@@ -9,5 +9,6 @@ public class Sedan extends Vehicle {
     public Sedan(String maker, String model, int seats, int vId) {
         super(maker, model, vId);
         this.seats = seats;
+
     }
 }

@@ -13,5 +13,6 @@ public class Truck extends Vehicle {
         this.capacity = capacity;
         this.wheels = wheels;
 
+
     }
 }

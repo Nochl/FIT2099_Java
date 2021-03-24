@@ -43,4 +43,5 @@ public class Bid {
         this.date = date;
     }
 
+
 }
