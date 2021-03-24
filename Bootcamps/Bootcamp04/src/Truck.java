@@ -12,5 +12,6 @@ public class Truck extends Vehicle {
         super(maker, model, vId);
         this.capacity = capacity;
         this.wheels = wheels;
+
     }
 }
