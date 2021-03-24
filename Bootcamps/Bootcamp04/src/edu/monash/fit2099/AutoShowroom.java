@@ -1,3 +1,10 @@
+package edu.monash.fit2099;
+
+import edu.monash.fit2099.buyers.Buyer;
+import edu.monash.fit2099.vehicles.Sedan;
+import edu.monash.fit2099.vehicles.Truck;
+import edu.monash.fit2099.vehicles.Vehicle;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,13 +50,52 @@ public class AutoShowroom {
     }
 
 
+    public void createSedan() {
+        Scanner gui = new Scanner(System.in);
+        System.out.println("---------------------------");
+        System.out.println("Please Enter The Following Details");
+        System.out.print("Maker: ");
+        String maker = gui.next();
+        System.out.print("Model: ");
+        String model = gui.next();
+        System.out.print("Number of Seats: ");
+        int seats = gui.nextInt();
+        System.out.print("Vehicle ID: ");
+        int vId = gui.nextInt();
+
+        vehicleList.add(new Sedan(maker, model, seats, vId));
+    }
+
+
+    public void createTruck() {
+        Scanner gui = new Scanner(System.in);
+        System.out.println("---------------------------");
+        System.out.println("Please Enter The Following Details");
+        System.out.print("Maker: ");
+        String maker = gui.next();
+        System.out.print("Model: ");
+        String model = gui.next();
+        System.out.print("Number of Wheels: ");
+        int wheels = gui.nextInt();
+        System.out.print("Vehicle ID: ");
+        int vId = gui.nextInt();
+
+        vehicleList.add(new Truck(maker, model, wheels, vId));
+    }
+
+
+
+
+
+
+
     public void displayCars() {
         System.out.println("---------------------------");
         for (int i = 0; i < vehicleList.size(); i++) {
             System.out.println("Car (" + (i + 1) + ") " + vehicleList.get(i).description());
 
             for (int j = 0; j < vehicleList.get(i).bids.size(); j++) {
-                System.out.println("Buyer: " + (vehicleList.get(i).bids.get(j).getBuyer().description()) + "  Price: " + (vehicleList.get(i).bids.get(j).getPrice()));
+                System.out.println("edu.monash.fit2099.buyers.Buyer: " + (vehicleList.get(i).bids.get(j).getBuyer().description()) + "  Price: " + (vehicleList.get(i).bids.get(j).getPrice()));
             }
 
             System.out.println();

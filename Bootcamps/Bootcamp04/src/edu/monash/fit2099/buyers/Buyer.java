@@ -1,3 +1,5 @@
+package edu.monash.fit2099.buyers;
+
 public class Buyer {
     private int buyerid;
     private String givenName;

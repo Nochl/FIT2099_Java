@@ -1,3 +1,6 @@
+package edu.monash.fit2099.bids;
+import edu.monash.fit2099.buyers.Buyer;
+
 public class Bid {
     private int bidId;
     private Buyer buyer;

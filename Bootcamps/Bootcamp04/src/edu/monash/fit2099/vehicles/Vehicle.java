@@ -1,5 +1,11 @@
-import java.util.ArrayList;
+package edu.monash.fit2099.vehicles;
+
+import edu.monash.fit2099.bids.Bid;
+import edu.monash.fit2099.bids.BidsManager;
+import edu.monash.fit2099.buyers.Buyer;
+
 import java.util.Random;
+import java.util.Scanner;
 
 abstract public class Vehicle {
 
@@ -15,7 +21,7 @@ abstract public class Vehicle {
     }
 
     public void addBid(Buyer newBuyer, int price, String date) {
-        bids.add(new Bid((bids.size()+1), newBuyer, price, date));
+        bids.addbid(new Bid((bids.size()+1), newBuyer, price, date));
     }
 
 
@@ -38,4 +44,6 @@ abstract public class Vehicle {
         this.vId = vId;
 
     }
+
+
 }
