@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AutoShowroom {
-    ArrayList<Car> carList = new ArrayList<Car>();
+    ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
 
 
     public void printStatus() {
@@ -14,12 +14,12 @@ public class AutoShowroom {
 
     public void createCars() {
         for (int i = 0; i < 3; i++) {
-            carList.add(new Car());
+            vehicleList.add(new Vehicle());
         }
 
-        carList.get(0).setMakeModel("BMW", "X7");
-        carList.get(1).setMakeModel("Audi", "A8");
-        carList.get(2).setMakeModel("Mercedes", "GLS");
+        vehicleList.get(0).setMakeModel("BMW", "X7");
+        vehicleList.get(1).setMakeModel("Audi", "A8");
+        vehicleList.get(2).setMakeModel("Mercedes", "GLS");
 
         for (int j = 0; j < 3; j++) {
             Scanner gui = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class AutoShowroom {
             String date = gui.next();
 
             Buyer person1 = new Buyer(buyId, gName, fName);
-            carList.get(j).addBid(person1, bidPrice, date);
+            vehicleList.get(j).addBid(person1, bidPrice, date);
         }
 
     }
@@ -45,11 +45,11 @@ public class AutoShowroom {
 
     public void displayCars() {
         System.out.println("---------------------------");
-        for (int i = 0; i < carList.size(); i++) {
-            System.out.println("Car (" + (i + 1) + ") " + carList.get(i).description());
+        for (int i = 0; i < vehicleList.size(); i++) {
+            System.out.println("Car (" + (i + 1) + ") " + vehicleList.get(i).description());
 
-            for (int j = 0; j < carList.get(i).bids.size(); j++) {
-                System.out.println("Buyer: " + (carList.get(i).bids.get(j).getBuyer().description()) + "  Price: " + (carList.get(i).bids.get(j).getPrice()));
+            for (int j = 0; j < vehicleList.get(i).bids.size(); j++) {
+                System.out.println("Buyer: " + (vehicleList.get(i).bids.get(j).getBuyer().description()) + "  Price: " + (vehicleList.get(i).bids.get(j).getPrice()));
             }
 
             System.out.println();
