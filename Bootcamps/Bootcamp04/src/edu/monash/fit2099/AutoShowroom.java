@@ -127,7 +127,7 @@ public class AutoShowroom {
         System.out.println("---------------------------");
         System.out.println("Current Buyers");
         for (int i = 0; i <buyerList.size(); i++) {
-            System.out.println((i+1)+": "+buyerList.get(i).description());
+            System.out.println(buyerList.get(i).description());
         }
     }
 
