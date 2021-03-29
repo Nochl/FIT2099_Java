@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 abstract public class Vehicle {
 
-    private BidsManager bids = new BidsManager();
+    public BidsManager bids = new BidsManager();
 
     private String maker = null;
     private String model = null;
@@ -20,10 +20,12 @@ abstract public class Vehicle {
         this.model = model;
     }
 
+    /*
     public void addBid(Buyer newBuyer, int price, String date) {
         bids.addbid(new Bid((bids.size()+1), newBuyer, price, date));
     }
 
+     */
 
     public String description() {
         return "Maker: "+ maker +" and "+model;
@@ -43,6 +45,10 @@ abstract public class Vehicle {
         this.model = model;
         this.vId = vId;
 
+    }
+
+    public int getVId(){
+        return vId;
     }
 
 

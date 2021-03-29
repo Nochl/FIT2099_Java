@@ -10,7 +10,9 @@ import java.util.Scanner;
 
 public class AutoShowroom {
     ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
+    ArrayList<Buyer> buyerList = new ArrayList<Buyer>();
 
+    /*
 
     public void printStatus() {
         System.out.println("Welcome to FIT2099 Showroom");
@@ -46,9 +48,8 @@ public class AutoShowroom {
             Buyer person1 = new Buyer(buyId, gName, fName);
             vehicleList.get(j).addBid(person1, bidPrice, date);
         }
-
     }
-
+     */
 
     public void createSedan() {
         Scanner gui = new Scanner(System.in);
@@ -83,11 +84,54 @@ public class AutoShowroom {
         vehicleList.add(new Truck(maker, model, wheels, vId));
     }
 
+    public void createBuyer() {
+        Scanner gui = new Scanner(System.in);
+        System.out.println("---------------------------");
+        System.out.println("Please Enter The Following Details");
+        System.out.print("Given Name: ");
+        String gName = gui.next();
+        System.out.print("Family Name: ");
+        String fName = gui.next();
+        buyerList.add(new Buyer((buyerList.size()+1), gName, fName));
+    }
 
+    public void createBid() {
+        Scanner gui = new Scanner(System.in);
+        System.out.println("---------------------------");
+        System.out.println("Please Enter The Following Details");
+        System.out.print("Vehicle ID: ");
+        int vId = gui.nextInt();
+        System.out.print("Buyer ID: ");
+        int buyId = gui.nextInt();
+        System.out.print("Price: ");
+        int price = gui.nextInt();
+        System.out.print("Date: ");
+        String date = gui.next();
+        for (int i = 0; i <vehicleList.size(); i++){
+            if (vehicleList.get(i).getVId() == vId) {
+                vehicleList.get(i).bids.addBid(buyId, price, date);
+            }
+        }
 
+    }
 
+    public void displayFleet() {
+        System.out.println("---------------------------");
+        System.out.println("Current Vehicles In Fleet");
+        for (int i = 0; i <vehicleList.size(); i++) {
+            System.out.println(i+" "+vehicleList.get(i).description());
+        }
+    }
 
+    public void displayBuyers() {
+        System.out.println("---------------------------");
+        System.out.println("Current Buyers");
+        for (int i = 0; i <buyerList.size(); i++) {
+            System.out.println(i+" "+buyerList.get(i).description());
+        }
+    }
 
+    /*
 
     public void displayCars() {
         System.out.println("---------------------------");
@@ -95,7 +139,7 @@ public class AutoShowroom {
             System.out.println("Car (" + (i + 1) + ") " + vehicleList.get(i).description());
 
             for (int j = 0; j < vehicleList.get(i).bids.size(); j++) {
-                System.out.println("edu.monash.fit2099.buyers.Buyer: " + (vehicleList.get(i).bids.get(j).getBuyer().description()) + "  Price: " + (vehicleList.get(i).bids.get(j).getPrice()));
+                System.out.println("Buyer: " + (vehicleList.get(i).bids.get(j).getBuyer().description()) + "  Price: " + (vehicleList.get(i).bids.get(j).getPrice()));
             }
 
             System.out.println();
@@ -103,5 +147,7 @@ public class AutoShowroom {
 
         }
     }
+
+     */
 }
 
