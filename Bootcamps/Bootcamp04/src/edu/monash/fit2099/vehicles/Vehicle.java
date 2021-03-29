@@ -28,7 +28,7 @@ abstract public class Vehicle {
      */
 
     public String description() {
-        return "Maker: "+ maker +" and "+model;
+        return "Maker: "+ maker +" and Model: "+model;
     }
 
     public Vehicle(String maker, String model) {

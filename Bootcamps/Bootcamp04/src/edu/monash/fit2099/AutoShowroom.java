@@ -119,7 +119,7 @@ public class AutoShowroom {
         System.out.println("---------------------------");
         System.out.println("Current Vehicles In Fleet");
         for (int i = 0; i <vehicleList.size(); i++) {
-            System.out.println(i+" "+vehicleList.get(i).description());
+            System.out.println((i+1)+": "+vehicleList.get(i).description());
         }
     }
 
@@ -127,7 +127,7 @@ public class AutoShowroom {
         System.out.println("---------------------------");
         System.out.println("Current Buyers");
         for (int i = 0; i <buyerList.size(); i++) {
-            System.out.println(i+" "+buyerList.get(i).description());
+            System.out.println((i+1)+": "+buyerList.get(i).description());
         }
     }
 
