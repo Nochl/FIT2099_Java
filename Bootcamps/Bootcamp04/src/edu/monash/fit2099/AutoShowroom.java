@@ -107,27 +107,32 @@ public class AutoShowroom {
         int price = gui.nextInt();
         System.out.print("Date: ");
         String date = gui.next();
-        for (int i = 0; i <vehicleList.size(); i++){
-            if (vehicleList.get(i).getVId() == vId) {
-                vehicleList.get(i).bids.addBid(buyId, price, date);
+        for (Vehicle vehicle : vehicleList) {
+            if (vehicle.getVId() == vId) {
+                vehicle.bids.addBid(buyId, price, date);
             }
         }
 
     }
 
     public void displayFleet() {
+        int id = 1;
         System.out.println("---------------------------");
         System.out.println("Current Vehicles In Fleet");
-        for (int i = 0; i <vehicleList.size(); i++) {
-            System.out.println((i+1)+": "+vehicleList.get(i).description());
+        for (Vehicle vehicle : vehicleList) {
+
+            System.out.println("Vehicle "+(id) + ": " + vehicle.description());
+                for (Integer key: vehicle.bids.bids.keySet())
+                    System.out.println("Bid "+key+": BuyerID: "+ vehicle.bids.bids.get(key).getBuyer() +" BidPrice: $"+vehicle.bids.bids.get(key).getPrice());
+            id++;
         }
     }
 
     public void displayBuyers() {
         System.out.println("---------------------------");
         System.out.println("Current Buyers");
-        for (int i = 0; i <buyerList.size(); i++) {
-            System.out.println(buyerList.get(i).description());
+        for (Buyer buyer : buyerList) {
+            System.out.println(buyer.description());
         }
     }
 

@@ -1,11 +1,8 @@
 package edu.monash.fit2099.vehicles;
 
-import edu.monash.fit2099.bids.Bid;
 import edu.monash.fit2099.bids.BidsManager;
-import edu.monash.fit2099.buyers.Buyer;
 
 import java.util.Random;
-import java.util.Scanner;
 
 abstract public class Vehicle {
 

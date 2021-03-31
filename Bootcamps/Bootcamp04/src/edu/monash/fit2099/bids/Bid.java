@@ -3,7 +3,7 @@ import edu.monash.fit2099.buyers.Buyer;
 
 public class Bid {
     private int bidId;
-    private Buyer buyer;
+    private int buyerid;
     private int price;
     private String date;
 
@@ -15,12 +15,12 @@ public class Bid {
         this.bidId = bidId;
     }
 
-    public Buyer getBuyer() {
-        return buyer;
+    public int getBuyer() {
+        return buyerid;
     }
 
-    public void setBuyer(Buyer buyer) {
-        this.buyer = buyer;
+    public void setBuyer(int buyerid) {
+        this.buyerid = buyerid;
     }
 
     public int getPrice() {
@@ -39,9 +39,9 @@ public class Bid {
         this.date = date;
     }
 
-    public Bid(int bidId, Buyer buyer, int price, String date) {
+    public Bid(int bidId, int buyerid, int price, String date) {
         this.bidId = bidId;
-        this.buyer = buyer;
+        this.buyerid = buyerid;
         this.price = price;
         this.date = date;
     }

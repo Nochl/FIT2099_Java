@@ -27,8 +27,13 @@ public class Bid {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public boolean setPrice(int price) {
+        boolean isValid=false;
+        if (price >= 0) {
+            isValid=true;
+            this.price = price;
+        }
+        return isValid;
     }
 
     public String getDate() {
@@ -36,6 +41,11 @@ public class Bid {
     }
 
     public void setDate(String date) {
+        boolean isValid=false
+        String[] val = date.split("/", 3);
+        day = int
+        if((val[0] )
+
         this.date = date;
     }
 
