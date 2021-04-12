@@ -22,7 +22,7 @@ public class Sedan extends Vehicle {
      * @param maker String of sedan maker with length between 3-15
      * @param model String of sedan model with length between 3-15
      * @param seats Integer of sedan seats with length between 4-5
-     * @throws VehicleException
+     * @throws VehicleException if maker or model is out of valid range
      */
     public Sedan(String maker, String model, int seats) throws VehicleException {
         super(maker, model);
@@ -40,7 +40,7 @@ public class Sedan extends Vehicle {
      * @param model String of sedan model with length between 3-15
      * @param seats Integer of sedan seats with length between 4-5
      * @param vId Integer of sedan ID
-     * @throws VehicleException
+     * @throws VehicleException if maker or model is out of valid range
      */
     public Sedan(String maker, String model, int seats, int vId) throws VehicleException  {
         super(maker, model, vId);
