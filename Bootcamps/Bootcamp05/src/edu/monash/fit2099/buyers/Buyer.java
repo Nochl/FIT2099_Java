@@ -6,8 +6,17 @@ package edu.monash.fit2099.buyers;
  * @version 1.0.0
  */
 public class Buyer {
+    /**
+     * Buyer idendification number
+     */
     private int buyerid;
+    /**
+     * buyers given name
+     */
     private String givenName;
+    /**
+     * buyers family name
+     */
     private String familyName;
 
     /**
@@ -55,7 +64,7 @@ public class Buyer {
 
     /**
      * Setter for buyer Given Name
-     * param givenName String of Given Name with length between 2-15
+     * @param givenName String of Given Name with length between 2-15
      * @return True if Given Name with length between 2-15, else false
      */
     public boolean setGivenName(String givenName) {
@@ -83,7 +92,7 @@ public class Buyer {
 
     /**
      * Returns buyers information
-     * @return buyerID, Given name & Family Name
+     * @return buyerID, Given name and Family Name
      */
     public String description() {
         return buyerid +" "+ givenName +" "+ familyName;

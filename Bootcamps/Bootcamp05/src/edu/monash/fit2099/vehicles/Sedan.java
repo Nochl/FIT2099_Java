@@ -12,6 +12,9 @@ import edu.monash.fit2099.exceptions.VehicleException;
  * @see Vehicle
  */
 public class Sedan extends Vehicle {
+    /**
+     * Number of seats in Sedan
+     */
     private int seats;
 
     /**

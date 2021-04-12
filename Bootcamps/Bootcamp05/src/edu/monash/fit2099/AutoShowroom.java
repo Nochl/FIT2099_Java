@@ -28,7 +28,13 @@ import java.util.Scanner;
  */
 
 public class AutoShowroom {
+    /**
+     * Stores Vehicle objects in an ArrayList
+     */
     ArrayList<Vehicle> vehicleList = new ArrayList<>();
+    /**
+     * Stores Buyer objects in an ArrayList
+     */
     ArrayList<Buyer> buyerList = new ArrayList<>();
 
 

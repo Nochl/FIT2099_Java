@@ -9,9 +9,21 @@ import edu.monash.fit2099.exceptions.BidException;
  * @see BidException
  */
 public class Bid {
+    /**
+     * Bid Identification number
+     */
     private int bidId;
+    /**
+     * Buyer Identification number
+     */
     private int buyerid;
+    /**
+     * Bid Price
+     */
     private int price;
+    /**
+     * Date of bid
+     */
     private String date;
 
     /**
@@ -101,7 +113,7 @@ public class Bid {
      * @param buyerid integer of buyer ID
      * @param price integer of bid price > 0
      * @param date string of date with format dd/mm/yyyy
-     * @throws BidException
+     * @throws BidException if bid date does not match format
      */
     public Bid(int bidId, int buyerid, int price, String date) throws BidException {
         if (setDate(date)) {

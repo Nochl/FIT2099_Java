@@ -12,7 +12,13 @@ import edu.monash.fit2099.exceptions.VehicleException;
  * @see Vehicle
  */
 public class Truck extends Vehicle {
+    /**
+     * Capacity of truck
+     */
     private int capacity;
+    /**
+     * Capacity of wheels
+     */
     private int wheels;
 
     /**
@@ -21,7 +27,7 @@ public class Truck extends Vehicle {
      * @param model String of truck model with length between 3-15
      * @param capacity Int of truck capacity between 1-15
      * @param wheels Int of truck wheels between 4-16
-     * @throws VehicleException
+     * @throws VehicleException if maker or model is out of valid range
      */
     public Truck(String maker, String model, int capacity, int wheels) throws VehicleException {
         super(maker, model);
@@ -41,7 +47,7 @@ public class Truck extends Vehicle {
      * @param capacity Int of truck capacity between 1-15
      * @param wheels Int of truck wheels between 4-16
      * @param vId Integer of truck ID
-     * @throws VehicleException
+     * @throws VehicleException if maker or model is out of valid range
      */
     public Truck(String maker, String model, int capacity, int wheels, int vId) throws VehicleException{
         super(maker, model, vId);

@@ -13,11 +13,21 @@ import java.util.Random;
  * @see VehicleException
  */
 abstract public class Vehicle {
-
+    /**
+     * Instance of BidsManager which stores the cars bids objects
+     */
     public BidsManager bids;
-
+    /**
+     * Name of vehicle Maker
+     */
     private String maker;
+    /**
+     * Name of vehicle Model
+     */
     private String model;
+    /**
+     * Vehicles idenficaiton number
+     */
     private int vId;
 
     /**
@@ -58,7 +68,7 @@ abstract public class Vehicle {
      * Vehicle Constructor which throws exceptions for invalid values
      * @param maker String of car Maker with length between 3-15
      * @param model String of car model with length between 3-15
-     * @throws VehicleException
+     * @throws VehicleException if Maker or Model is outside of valid ranges
      */
     public Vehicle(String maker, String model) throws VehicleException {
         if(setMaker(maker) && setModel(model)) {
@@ -80,7 +90,7 @@ abstract public class Vehicle {
      * @param maker a String of the Manufacturers Name of length between 3-15
      * @param model a String of the cars Model of length between 3-15
      * @param vId integer vehicle ID
-     * @throws VehicleException
+     * @throws VehicleException if Maker or Model is outside of valid ranges
      */
     public Vehicle(String maker, String model, int vId) throws VehicleException {
         if(setMaker(maker) && setModel(model)) {

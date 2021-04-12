@@ -11,7 +11,13 @@ import java.util.HashMap;
  * @see BidException
  */
 public class BidsManager {
+    /**
+     * stores current number of bids as an interator
+     */
     private int numBids = 0;
+    /**
+     * stores Bid objects in a hashmap
+     */
     public HashMap<Integer, Bid> bids;
 
     /**

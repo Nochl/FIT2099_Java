@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class AutoShowroomDriver{
     /**
      * Initialises and runs the applications menu and its functionalities
-     * @param args
+     * @param args Input when starting program
      */
     public static void main(String[] args){
         int selection;
