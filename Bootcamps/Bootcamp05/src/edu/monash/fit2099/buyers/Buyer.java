@@ -15,12 +15,22 @@ public class Buyer {
         this.familyName = newFamilyName;
     }
 
-    public void setGivenName(String givenName) {
-        this.givenName = givenName;
+    public boolean setGivenName(String givenName) {
+        boolean isValid=false;
+        if ((givenName.length() > 1) && (givenName.length() < 16)) {
+            isValid=true;
+            this.givenName = givenName;
+        }
+        return isValid;
     }
 
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    public boolean setFamilyName(String familyName) {
+        boolean isValid=false;
+        if ((familyName.length() > 1) && (familyName.length() < 16)) {
+            isValid=true;
+            this.familyName = familyName;
+        }
+        return isValid;
     }
 
     public String description() {

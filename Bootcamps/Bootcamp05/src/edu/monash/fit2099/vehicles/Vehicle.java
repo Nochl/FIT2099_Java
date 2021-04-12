@@ -12,6 +12,24 @@ abstract public class Vehicle {
     private String model = null;
     private int vId;
 
+    public boolean setMaker(String maker) {
+        boolean isValid=false;
+        if ((maker.length() > 2) && (maker.length() < 16)) {
+            isValid=true;
+            this.maker = maker;
+        }
+        return isValid;
+    }
+
+    public boolean setModel(String model) {
+        boolean isValid=false;
+        if ((model.length() > 2) && (model.length() < 16)) {
+            isValid=true;
+            this.model = model;
+        }
+        return isValid;
+    }
+
     public void setMakeModel(String make, String model) {
         this.maker = make;
         this.model = model;

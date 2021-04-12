@@ -30,7 +30,7 @@ public class Bid {
     public boolean setPrice(int price) {
         boolean isValid=false;
         if(price >=0) {
-            isValid = true
+            isValid = true;
             this.price = price;
         }
         return isValid;
