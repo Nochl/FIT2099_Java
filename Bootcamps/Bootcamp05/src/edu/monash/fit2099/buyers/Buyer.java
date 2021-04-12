@@ -5,14 +5,28 @@ public class Buyer {
     private String givenName;
     private String familyName;
 
-    public Buyer(int newBuyerId) {
+    private Buyer(){
+    }
+
+    private Buyer(int newBuyerId) {
         this.buyerid = newBuyerId;
     }
 
-    public Buyer(int newBuyerId, String newGivenName, String newFamilyName) {
+    private Buyer(int newBuyerId, String newGivenName, String newFamilyName) {
         this.buyerid = newBuyerId;
         this.givenName = newGivenName;
         this.familyName = newFamilyName;
+    }
+
+    public static Buyer getInstance(String givenName, String familyName){
+        Buyer instance = new Buyer();
+        if (instance.setGivenName(givenName) && instance.setFamilyName(familyName)) {
+            instance.setGivenName(givenName);
+            instance.setFamilyName(familyName);
+            return instance;
+
+        }
+        else return null;
     }
 
     public boolean setGivenName(String givenName) {

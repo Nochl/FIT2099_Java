@@ -9,8 +9,8 @@ abstract public class Vehicle {
 
     public BidsManager bids;
 
-    private String maker = null;
-    private String model = null;
+    private String maker;
+    private String model;
     private int vId;
 
     public boolean setMaker(String maker) {
@@ -55,10 +55,14 @@ abstract public class Vehicle {
 
     }
 
-    public Vehicle(String maker, String model, int vId) {
-        this.maker = maker;
-        this.model = model;
-        this.vId = vId;
+    public Vehicle(String maker, String model, int vId) throws VehicleException {
+        if(setMaker(maker) && setModel(model)) {
+            this.maker = maker;
+            this.model = model;
+            this.vId = vId;
+        } else {
+            throw new VehicleException("Incorrect Maker OR Model");
+        }
 
     }
 

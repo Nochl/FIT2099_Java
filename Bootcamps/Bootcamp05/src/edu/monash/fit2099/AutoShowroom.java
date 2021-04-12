@@ -9,11 +9,12 @@ import edu.monash.fit2099.vehicles.Truck;
 import edu.monash.fit2099.vehicles.Vehicle;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AutoShowroom {
-    ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
-    ArrayList<Buyer> buyerList = new ArrayList<Buyer>();
+    ArrayList<Vehicle> vehicleList = new ArrayList<>();
+    ArrayList<Buyer> buyerList = new ArrayList<>();
 
 
     public void createSedan() {
@@ -24,10 +25,28 @@ public class AutoShowroom {
         String maker = gui.next();
         System.out.print("Model: ");
         String model = gui.next();
-        System.out.print("Number of Seats: ");
-        int seats = gui.nextInt();
-        System.out.print("Vehicle ID: ");
-        int vId = gui.nextInt();
+
+        Integer seats = null;
+        while (seats == null) {
+            System.out.print("Number of Seats: ");
+            try {
+                seats = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for seats");
+                gui.nextLine();
+            }
+        }
+
+        Integer vId = null;
+        while (vId == null) {
+            System.out.print("Vehicle ID: ");
+            try {
+                vId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Vehicle ID");
+                gui.nextLine();
+            }
+        }
 
         try {
             vehicleList.add(new Sedan(maker, model, seats, vId));
@@ -49,13 +68,33 @@ public class AutoShowroom {
         String maker = gui.next();
         System.out.print("Model: ");
         String model = gui.next();
-        System.out.print("Number of Wheels: ");
-        int wheels = gui.nextInt();
-        System.out.print("Vehicle ID: ");
-        int vId = gui.nextInt();
+
+        Integer wheels = null;
+        while (wheels == null) {
+            System.out.print("Number of Wheels: ");
+            try {
+                wheels = gui.nextInt();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Wheels");
+                gui.nextLine();
+            }
+        }
+
+        Integer capacity = null;
+        while (capacity == null) {
+            System.out.print("Vehicle Capacity: ");
+            try {
+                capacity = gui.nextInt();
+            }
+            catch (InputMismatchException e){
+                System.out.println("String Values are not valid for capacity");
+                gui.nextLine();
+            }
+        }
 
         try {
-            vehicleList.add(new Truck(maker, model, wheels, vId));
+            vehicleList.add(new Truck(maker, model, wheels, capacity));
         }
         catch (TruckException e) {
             System.out.println(e.getMessage());
@@ -73,19 +112,52 @@ public class AutoShowroom {
         String gName = gui.next();
         System.out.print("Family Name: ");
         String fName = gui.next();
-        buyerList.add(new Buyer((buyerList.size()+1), gName, fName));
+        Buyer buyer = Buyer.getInstance(gName, fName);
+        if (buyer != null) {
+            buyerList.add(buyer);
+            System.out.print(buyer);
+        }
+        else System.out.print("Something wrong with the buyer's values!!!");
     }
 
     public void createBid() {
         Scanner gui = new Scanner(System.in);
         System.out.println("---------------------------");
         System.out.println("Please Enter The Following Details");
-        System.out.print("Vehicle ID: ");
-        int vId = gui.nextInt();
-        System.out.print("Buyer ID: ");
-        int buyId = gui.nextInt();
-        System.out.print("Price: ");
-        int price = gui.nextInt();
+
+        Integer vId = null;
+        while (vId == null) {
+            System.out.print("Vehicle ID: ");
+            try {
+                vId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Vehicle ID");
+                gui.nextLine();
+            }
+        }
+
+        Integer buyId = null;
+        while (buyId == null) {
+            System.out.print("Buyer ID: ");
+            try {
+                buyId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Buyer ID");
+                gui.nextLine();
+            }
+        }
+
+        Integer price = null;
+        while (price == null) {
+            System.out.print("Price: ");
+            try {
+                price = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Price");
+                gui.nextLine();
+            }
+        }
+
         System.out.print("Date: ");
         String date = gui.next();
         for (Vehicle vehicle : vehicleList) {
