@@ -2,32 +2,63 @@ package edu.monash.fit2099.bids;
 
 import edu.monash.fit2099.exceptions.BidException;
 
+/**
+ * Class which is used to store bid information
+ * @author Enoch Leow
+ * @version 1.0.0
+ * @see BidException
+ */
 public class Bid {
     private int bidId;
     private int buyerid;
     private int price;
     private String date;
 
+    /**
+     * getter for BidID
+     * @return integer Bid ID
+     */
     public int getBidId() {
         return bidId;
     }
 
+    /**
+     * setter for BidID
+     * @param bidId integer Bid ID
+     */
     public void setBidId(int bidId) {
         this.bidId = bidId;
     }
 
+    /**
+     * getter for BuyerID
+     * @return integer Buyer ID
+     */
     public int getBuyer() {
         return buyerid;
     }
 
+    /**
+     * Setter for BuyerID
+     * @param buyerid integer Buyer ID
+     */
     public void setBuyer(int buyerid) {
         this.buyerid = buyerid;
     }
 
+    /**
+     * getter for bid price
+     * @return integer bid price
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * setter for bid price
+     * @param price bid price integer > 0
+     * @return true if bid price > 0, else false
+     */
     public boolean setPrice(int price) {
         boolean isValid=false;
         if(price >=0) {
@@ -37,10 +68,19 @@ public class Bid {
         return isValid;
     }
 
+    /**
+     * getter for bid date
+     * @return string of bid date in the formal dd/mm/yyyy
+     */
     public String getDate() {
         return date;
     }
 
+    /**
+     * Setter for date with validation
+     * @param date string with format dd/mm/yyyy
+     * @return true if date is string and matches thr format dd/mm/yyyy
+     */
     public boolean setDate(String date) {
         boolean isValid=false;
         String[] splits = date.split("/", 3);
@@ -55,6 +95,14 @@ public class Bid {
     }
 
 
+    /**
+     * Bid constructor with validation
+     * @param bidId integer of bid ID
+     * @param buyerid integer of buyer ID
+     * @param price integer of bid price > 0
+     * @param date string of date with format dd/mm/yyyy
+     * @throws BidException
+     */
     public Bid(int bidId, int buyerid, int price, String date) throws BidException {
         if (setDate(date)) {
             this.bidId = bidId;

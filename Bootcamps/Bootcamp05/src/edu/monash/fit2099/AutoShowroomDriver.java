@@ -2,7 +2,19 @@ package edu.monash.fit2099;
 
 import java.util.Scanner;
 
+/**
+ * Runs the whole Java application
+ * Impliments the menu system in console along with accessing all the available methods
+ * @author Enoch Leow
+ * @version 1.0
+ * @see AutoShowroom
+ * @
+ */
 public class AutoShowroomDriver{
+    /**
+     * Initialises and runs the applications menu and its functionalities
+     * @param args
+     */
     public static void main(String[] args){
         int selection;
 
@@ -41,6 +53,10 @@ public class AutoShowroomDriver{
 
         }
 
+    /**
+     * Displays the menu and passes user input to the main method
+     * @return integer which tells menu the chosen option
+     */
     public static int selectMenuItem() {
         Scanner scanner=new Scanner(System.in);
         System.out.println("+-----------------------------------+");

@@ -12,11 +12,29 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * The AutoShowroom Class stores Cars and Buyers in 2 arraylists
+ * It also contains all methods used by the I/O menu
+ * These methods include creating vehicles, buyers, bids along with displaying cars and buyers
+ * @author Enoch Leow
+ * @version 1.0.0
+ * @see Buyer
+ * @see Sedan
+ * @see Truck
+ * @see Vehicle
+ * @see SedanException
+ * @see TruckException
+ * @see VehicleException
+ */
+
 public class AutoShowroom {
     ArrayList<Vehicle> vehicleList = new ArrayList<>();
     ArrayList<Buyer> buyerList = new ArrayList<>();
 
 
+    /**
+     * Creates a Truck instance by taking the users input through the console and adds it to the vehicleList Arraylist
+     */
     public void createSedan() {
         Scanner gui = new Scanner(System.in);
         System.out.println("---------------------------");
@@ -60,6 +78,9 @@ public class AutoShowroom {
     }
 
 
+    /**
+     * Creates a Truck instance by taking the users input through the console and adds it to the vehicleList Arraylist
+     */
     public void createTruck() {
         Scanner gui = new Scanner(System.in);
         System.out.println("---------------------------");
@@ -104,6 +125,9 @@ public class AutoShowroom {
         }
     }
 
+    /**
+     * Creates a Buyer instance by taking the users input through the console and adds it to the buyerList Arraylist
+     */
     public void createBuyer() {
         Scanner gui = new Scanner(System.in);
         System.out.println("---------------------------");
@@ -120,6 +144,9 @@ public class AutoShowroom {
         else System.out.print("Something wrong with the buyer's values!!!");
     }
 
+    /**
+     * Creates a Bid instance by taking the users input through the console and stores it in the given vehicles' instance
+     */
     public void createBid() {
         Scanner gui = new Scanner(System.in);
         System.out.println("---------------------------");
@@ -168,6 +195,9 @@ public class AutoShowroom {
 
     }
 
+    /**
+     * Prints the details of vehicles stored in the vehicleList along with any of its bids
+     */
     public void displayFleet() {
         int id = 1;
         System.out.println("---------------------------");
@@ -181,6 +211,9 @@ public class AutoShowroom {
         }
     }
 
+    /**
+     * Prints the details of each buyer within buyerList
+     */
     public void displayBuyers() {
         System.out.println("---------------------------");
         System.out.println("Current Buyers");
