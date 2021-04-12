@@ -8,7 +8,6 @@ import java.util.Scanner;
  * @author Enoch Leow
  * @version 1.0
  * @see AutoShowroom
- * @
  */
 public class AutoShowroomDriver{
     /**
