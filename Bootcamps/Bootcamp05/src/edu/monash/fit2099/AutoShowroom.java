@@ -1,6 +1,9 @@
 package edu.monash.fit2099;
 
 import edu.monash.fit2099.buyers.Buyer;
+import edu.monash.fit2099.exceptions.SedanException;
+import edu.monash.fit2099.exceptions.TruckException;
+import edu.monash.fit2099.exceptions.VehicleException;
 import edu.monash.fit2099.vehicles.Sedan;
 import edu.monash.fit2099.vehicles.Truck;
 import edu.monash.fit2099.vehicles.Vehicle;
@@ -26,7 +29,15 @@ public class AutoShowroom {
         System.out.print("Vehicle ID: ");
         int vId = gui.nextInt();
 
-        vehicleList.add(new Sedan(maker, model, seats, vId));
+        try {
+            vehicleList.add(new Sedan(maker, model, seats, vId));
+        }
+        catch (SedanException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (VehicleException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 
@@ -43,7 +54,15 @@ public class AutoShowroom {
         System.out.print("Vehicle ID: ");
         int vId = gui.nextInt();
 
-        vehicleList.add(new Truck(maker, model, wheels, vId));
+        try {
+            vehicleList.add(new Truck(maker, model, wheels, vId));
+        }
+        catch (TruckException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (VehicleException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void createBuyer() {
