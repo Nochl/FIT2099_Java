@@ -224,6 +224,9 @@ public class AutoShowroom {
         }
     }
 
+    /**
+     * Prints the vehicles lowest bid price along with the buyers ID
+     */
     public void bestBid() {
         Scanner gui = new Scanner(System.in);
         Integer vId = null;
@@ -254,6 +257,9 @@ public class AutoShowroom {
 
     }
 
+    /**
+     * Prints the vehicles lowest bid price along with the buyers ID
+     */
     public void worstBid() {
         Scanner gui = new Scanner(System.in);
         Integer vId = null;
@@ -284,6 +290,9 @@ public class AutoShowroom {
 
     }
 
+    /**
+     * Removes a bid with a given bidID from a vehicle
+     */
     public void removeBid() {
         Scanner gui = new Scanner(System.in);
         Integer vId = null;
@@ -318,6 +327,9 @@ public class AutoShowroom {
 
     }
 
+    /**
+     * Removes a vehicle from the showroom fleet and adds it to a soldlist arraylist
+     */
     public void sellVehicle() {
         Scanner gui = new Scanner(System.in);
         Integer vId = null;
@@ -336,6 +348,9 @@ public class AutoShowroom {
 
     }
 
+    /**
+     * Prints all vehicles in the soldFleet arraylist
+     */
     public void soldFleet() {
         int id = 1;
         System.out.println("---------------------------");

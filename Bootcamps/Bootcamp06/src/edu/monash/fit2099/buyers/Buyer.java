@@ -98,6 +98,10 @@ public class Buyer {
         return buyerid +" "+ givenName +" "+ familyName;
     }
 
+    /**
+     * Returns Buyer identification
+     * @return BuyerID
+     */
     public int getBuyerid() {
         return buyerid;
     }
