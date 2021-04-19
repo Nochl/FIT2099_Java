@@ -57,9 +57,17 @@ public class AutoShowroomDriver{
                 case 9:
                     autoShowroom.removeBid();
                     break;
+
+                case 10:
+                    autoShowroom.sellVehicle();
+                    break;
+
+                case 11:
+                    autoShowroom.soldFleet();
+                    break;
                 }
 
-            }while (selection!=10);
+            }while (selection!=12);
 
         }
 
@@ -82,7 +90,9 @@ public class AutoShowroomDriver{
         System.out.println("7) Highest Bid");
         System.out.println("8) Lowest Bid");
         System.out.println("9) Remove Bid");
-        System.out.println("10) Exit");
+        System.out.println("10) Sell Vehicle");
+        System.out.println("11) Display Sold Vehicles");
+        System.out.println("12) Exit");
         System.out.println("Please Select an Option:");
         int choice = scanner.nextInt();
         return choice;

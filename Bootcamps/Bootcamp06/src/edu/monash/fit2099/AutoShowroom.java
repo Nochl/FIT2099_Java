@@ -38,6 +38,10 @@ public class AutoShowroom {
      * Stores Buyer objects in an ArrayList
      */
     ArrayList<Buyer> buyerList = new ArrayList<>();
+    /**
+     * Stores sold Vehicle objects in an Arraylist
+     */
+    ArrayList<Vehicle> soldList = new ArrayList<>();
 
 
     /**
@@ -310,6 +314,35 @@ public class AutoShowroom {
                 break;
             }
 
+        }
+
+    }
+
+    public void sellVehicle() {
+        Scanner gui = new Scanner(System.in);
+        Integer vId = null;
+        System.out.print("Vehicle ID: ");
+        while (vId == null) {
+            try {
+                vId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Vehicle ID");
+                gui.nextLine();
+            }
+        }
+        Vehicle vehicle = vehicleList.get(vId);
+        soldList.add(vehicle);
+        vehicleList.remove(vId.intValue());
+
+    }
+
+    public void soldFleet() {
+        int id = 1;
+        System.out.println("---------------------------");
+        System.out.println("Current Vehicles Sold");
+        for (Vehicle vehicle : soldList) {
+
+            System.out.println("Vehicle "+(id) + ": " + vehicle.description());
         }
     }
 }
