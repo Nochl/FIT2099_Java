@@ -35,7 +35,7 @@ public class BidsManager {
      */
     public void addBid(int buyerId, int bidPrice, String bidDate) {
         try {
-            bids.put(buyerId, new Bid((numBids + 1), buyerId, bidPrice, bidDate));
+            bids.put(buyerId, new Bid((numBids), buyerId, bidPrice, bidDate));
             numBids++;
         }
         catch (BidException e) {

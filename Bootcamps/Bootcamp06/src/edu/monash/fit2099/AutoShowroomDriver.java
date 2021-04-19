@@ -46,9 +46,20 @@ public class AutoShowroomDriver{
                     autoShowroom.createBid();
                     break;
 
+                case 7:
+                    autoShowroom.bestBid();
+                    break;
+
+                case 8:
+                    autoShowroom.worstBid();
+                    break;
+
+                case 9:
+                    autoShowroom.removeBid();
+                    break;
                 }
 
-            }while (selection!=7);
+            }while (selection!=10);
 
         }
 
@@ -68,7 +79,10 @@ public class AutoShowroomDriver{
         System.out.println("4) Add Buyer");
         System.out.println("5) List Buyers");
         System.out.println("6) Add Bid");
-        System.out.println("7) Exit");
+        System.out.println("7) Highest Bid");
+        System.out.println("8) Lowest Bid");
+        System.out.println("9) Remove Bid");
+        System.out.println("10) Exit");
         System.out.println("Please Select an Option:");
         int choice = scanner.nextInt();
         return choice;

@@ -1,5 +1,6 @@
 package edu.monash.fit2099;
 
+import edu.monash.fit2099.bids.Bid;
 import edu.monash.fit2099.buyers.Buyer;
 import edu.monash.fit2099.exceptions.SedanException;
 import edu.monash.fit2099.exceptions.TruckException;
@@ -9,6 +10,7 @@ import edu.monash.fit2099.vehicles.Truck;
 import edu.monash.fit2099.vehicles.Vehicle;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -61,19 +63,9 @@ public class AutoShowroom {
             }
         }
 
-        Integer vId = null;
-        while (vId == null) {
-            System.out.print("Vehicle ID: ");
-            try {
-                vId = gui.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("String Values are not valid for Vehicle ID");
-                gui.nextLine();
-            }
-        }
 
         try {
-            vehicleList.add(new Sedan(maker, model, seats, vId));
+            vehicleList.add(new Sedan(maker, model, seats, vehicleList.size()));
         }
         catch (SedanException e) {
             System.out.println(e.getMessage());
@@ -121,7 +113,7 @@ public class AutoShowroom {
         }
 
         try {
-            vehicleList.add(new Truck(maker, model, wheels, capacity));
+            vehicleList.add(new Truck(maker, model, wheels, capacity, vehicleList.size()));
         }
         catch (TruckException e) {
             System.out.println(e.getMessage());
@@ -228,5 +220,97 @@ public class AutoShowroom {
         }
     }
 
+    public void bestBid() {
+        Scanner gui = new Scanner(System.in);
+        Integer vId = null;
+        System.out.print("Vehicle ID: ");
+        while (vId == null ) {
+            try {
+                vId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Vehicle ID");
+                gui.nextLine();
+            }
+        }
+
+        Vehicle vehicle = vehicleList.get(vId);
+        Integer hbid = 0;
+        Integer k = null;
+        for (Integer key: vehicle.bids.bids.keySet()) {
+            System.out.println("Bid " + key + ": BuyerID: " + vehicle.bids.bids.get(key).getBuyer() + " BidPrice: $" + vehicle.bids.bids.get(key).getPrice());
+            if (vehicle.bids.bids.get(key).getPrice() > hbid) {
+                hbid = vehicle.bids.bids.get(key).getPrice();
+                k = key;
+            }
+        }
+
+        if (hbid > 0) {
+            System.out.println("Highest current bid is $" + vehicle.bids.bids.get(k).getPrice() + " by BuyerID: " + vehicle.bids.bids.get(k).getBuyer());
+        }
+
+    }
+
+    public void worstBid() {
+        Scanner gui = new Scanner(System.in);
+        Integer vId = null;
+        System.out.print("Vehicle ID: ");
+        while (vId == null ) {
+            try {
+                vId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Vehicle ID");
+                gui.nextLine();
+            }
+        }
+
+        Vehicle vehicle = vehicleList.get(vId);
+        Integer lbid = 999999999;
+        Integer k = null;
+        for (Integer key: vehicle.bids.bids.keySet()) {
+            System.out.println("Bid " + key + ": BuyerID: " + vehicle.bids.bids.get(key).getBuyer() + " BidPrice: $" + vehicle.bids.bids.get(key).getPrice());
+            if (vehicle.bids.bids.get(key).getPrice() < lbid) {
+                lbid = vehicle.bids.bids.get(key).getPrice();
+                k = key;
+            }
+        }
+
+        if (lbid > 0) {
+            System.out.println("Highest current bid is $" + vehicle.bids.bids.get(k).getPrice() + " by BuyerID: " + vehicle.bids.bids.get(k).getBuyer());
+        }
+
+    }
+
+    public void removeBid() {
+        Scanner gui = new Scanner(System.in);
+        Integer vId = null;
+        System.out.print("Vehicle ID: ");
+        while (vId == null) {
+            try {
+                vId = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Vehicle ID");
+                gui.nextLine();
+            }
+        }
+        Integer bid = null;
+        System.out.print("Bid ID: ");
+        while (bid == null) {
+            try {
+                bid = gui.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("String Values are not valid for Bid ID");
+                gui.nextLine();
+            }
+        }
+
+        Vehicle vehicle = vehicleList.get(vId);
+        for (Integer key: vehicle.bids.bids.keySet()) {
+            if (vehicle.bids.bids.get(key).getBidId() == bid) {
+                vehicle.bids.bids.remove(key);
+                break;
+            }
+
+        }
+    }
 }
 

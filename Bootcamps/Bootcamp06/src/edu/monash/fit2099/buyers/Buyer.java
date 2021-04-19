@@ -98,6 +98,8 @@ public class Buyer {
         return buyerid +" "+ givenName +" "+ familyName;
     }
 
-
+    public int getBuyerid() {
+        return buyerid;
+    }
 }
 

@@ -16,7 +16,7 @@ abstract public class Vehicle {
     /**
      * Instance of BidsManager which stores the cars bids objects
      */
-    public BidsManager bids;
+    public BidsManager bids = new BidsManager();
     /**
      * Name of vehicle Maker
      */
